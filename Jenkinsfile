@@ -7,7 +7,7 @@ node('windows') {
   }
 
   stage 'checkout'
-  git url: "https://github.com/sns-seb/reactos.git", branch: "master"
+  git url: "https://github.com/sns-seb/reactos.git", branch: "rebloch-work-branch"
   unstash 'files'
   withSonarQubeCredentials {
     bat 'wget %SONARQUBE_URL%/static/cpp/build-wrapper-win-x86.zip'
