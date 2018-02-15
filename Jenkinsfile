@@ -9,7 +9,7 @@ node('windows') {
   stage 'checkout'
   git url: "https://github.com/sns-seb/reactos.git", branch: "rebloch-work-branch"
   unstash 'files'
-  withSonarQubeCredentials {
+  withSonarQubeEnv('Rebloch (henri.gomez@sonarsource.com)') {
     bat 'wget %SONARQUBE_URL%/static/cpp/build-wrapper-win-x86.zip'
     bat 'unzip -o build-wrapper-win-x86.zip'
   }
@@ -27,16 +27,10 @@ node('windows') {
  }
 }
 
-def withSonarQubeCredentials(def body) {
-  withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'af31d5fa-f22c-42d8-b6e4-177686ec44d5', usernameVariable: 'SONARQUBE_URL', passwordVariable: 'SONARQUBE_TOKEN']]) {
-    body.call();
-  }
-}
-
 def withScanner(def body) {
-  def javaHome = tool name: 'Java 8', type: 'hudson.model.JDK'
+  def javaHome = tool name: 'Install Java 8', type: 'hudson.model.JDK'
   def scannerHome = tool name: "SonarQube Scanner 2.6.1", type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-  withSonarQubeCredentials {
+  withSonarQubeEnv('Rebloch (henri.gomez@sonarsource.com)') {
     withEnv(["JAVA_HOME=${javaHome}", "PATH+SCANNER=${scannerHome}/bin"]) {
       body.call()
     }
