@@ -3,9 +3,10 @@ sonar-scanner ^
     -e ^
     -Dsonar.verbose=true ^
     -Dsonar.host.url=%SONAR_HOST_URL% ^
-    -Dsonar.login=%SONAR_AUTH_TOKEN% ^
+    -Dsonar.login="9364c0b16b79933e9af94663ecee9edb17a4e604" ^
     -Dsonar.cfamily.build-wrapper-output=cfamily-compilation-database ^
-    -Dsonar.projectKey="c-family:reactos-windows" ^
+    -Dsonar.organization="sns-seb-github" ^
+    -Dsonar.projectKey="rebloch-reactos" ^
     -Dsonar.projectName="ReactOS Windows" ^
     -Dsonar.projectVersion=latest ^
     -Dsonar.sourceEncoding=UTF-8 ^
