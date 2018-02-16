@@ -2,8 +2,8 @@
 sonar-scanner ^
     -e ^
     -Dsonar.verbose=true ^
-    -Dsonar.host.url=%SONARQUBE_URL% ^
-    -Dsonar.login=%SONARQUBE_TOKEN% ^
+    -Dsonar.host.url=%SONAR_HOST_URL% ^
+    -Dsonar.login=%SONAR_AUTH_TOKEN% ^
     -Dsonar.cfamily.build-wrapper-output=cfamily-compilation-database ^
     -Dsonar.projectKey="c-family:reactos-windows" ^
     -Dsonar.projectName="ReactOS Windows" ^
