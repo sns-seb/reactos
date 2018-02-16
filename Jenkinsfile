@@ -1,4 +1,5 @@
 node('windows') {
+  deleteDir()
  // https://issues.jenkins-ci.org/browse/JENKINS-38706
  ws("workspace/${env.JOB_NAME}") {
   ws {
