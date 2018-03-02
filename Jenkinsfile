@@ -29,7 +29,7 @@ node('windows') {
 }
 
 def withScanner(def body) {
-  def javaHome = tool name: 'Java 8', type: 'hudson.model.JDK'
+  def javaHome = tool name: 'OracleJDK8', type: 'hudson.model.JDK'
   def scannerHome = tool name: "SonarQube Scanner 2.6.1", type: 'hudson.plugins.sonar.SonarRunnerInstallation'
   withSonarQubeEnv('Rebloch (henri.gomez@sonarsource.com)') {
     withEnv(["JAVA_HOME=${javaHome}", "PATH+SCANNER=${scannerHome}/bin"]) {
