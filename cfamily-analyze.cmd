@@ -3,7 +3,7 @@ sonar-scanner ^
     -e ^
     -Dsonar.verbose=true ^
     -Dsonar.host.url=%SONAR_HOST_URL% ^
-    -Dsonar.login="9364c0b16b79933e9af94663ecee9edb17a4e604" ^
+    -Dsonar.login="f7cb919536e269f988d973f02e0167570e691be4" ^
     -Dsonar.cfamily.build-wrapper-output=cfamily-compilation-database ^
     -Dsonar.organization="sns-seb-github" ^
     -Dsonar.projectKey="rebloch-reactos" ^
