@@ -11,9 +11,9 @@ node('windows') {
   git url: "https://github.com/sns-seb/reactos.git", branch: "rebloch-work-branch"
   unstash 'files'
   withSonarQubeEnv('Rebloch (henri.gomez@sonarsource.com)') {
-    bat 'wget %SONAR_HOST_URL%/static/cpp/build-wrapper-win-x86.zip'
-    bat 'unzip -o build-wrapper-win-x86.zip'
+    bash 'curl -LsS %SONAR_HOST_URL%/static/cpp/build-wrapper-win-x86.zip > build-wrapper-win-x86.zip'
   }
+  bat 'unzip -o build-wrapper-win-x86.zip'
 
   stage 'build'
   bat 'cfamily-build.cmd'
