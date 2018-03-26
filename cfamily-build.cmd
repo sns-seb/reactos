@@ -12,13 +12,11 @@ call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliar
 
 rmdir /Q /S output-VS-i386
 rmdir /Q /S output-VS-amd64
-rmdir /Q /S output-VS-i386-sln
-rmdir /Q /S output-VS-amd64-sln
 
 call configure.cmd VSSolution
 if %errorlevel% neq 0 exit /b %errorlevel%
 
-cd output-VS-amd64-sln
+cd output-VS-amd64
 
 REM disable msbuild node reuse
 set MSBUILDDISABLENODEREUSE=1
